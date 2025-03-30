@@ -193,6 +193,10 @@ public class OrderService {
             }
         }
     }
+    //原子性：确保 cancelOrder 方法中的所有数据库操作要么全部成功，要么全部失败。
+    //一致性：确保数据库从一个一致状态转换到另一个一致状态。
+    //隔离性：确保多个并发事务不会互相干扰。
+    //持久性：一旦事务提交，对数据库的修改就是永久性的。
 
     public void testRabbitMQ(Long orderId) {
         rabbitTemplate.convertAndSend(RabbitMQConfig.DELAY_EXCHANGE, RabbitMQConfig.DELAY_ROUTING_KEY, String.valueOf(orderId));

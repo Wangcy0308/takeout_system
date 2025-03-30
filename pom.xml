@@ -74,6 +74,9 @@
     </dependency>
 
     <!-- Redis -->
+    <!-- Circuit Breaker -->
+
+    <!-- Redis -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -83,7 +86,24 @@
       <artifactId>spring-boot-starter-cache</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>io.github.resilience4j</groupId>
+      <artifactId>resilience4j-spring-boot3</artifactId>
+      <version>2.1.0</version> <!-- 推荐使用 Resilience4j 的稳定版本 -->
+    </dependency>
 
+    <!-- 可选：显示添加核心模块（也可只添加需要的） -->
+    <dependency>
+      <groupId>io.github.resilience4j</groupId>
+      <artifactId>resilience4j-circuitbreaker</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.github.resilience4j</groupId>
+      <artifactId>resilience4j-ratelimiter</artifactId>
+      <version>2.1.0</version>
+    </dependency>
     <!-- Servlet API -->
     <dependency>
       <groupId>javax.servlet</groupId>
